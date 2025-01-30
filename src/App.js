@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react';
 import {Header} from './components/Header';
 import {AddTask} from './components/AddTask';
 import {ShowTask} from './components/ShowTask';
-import logo from './assets/icon.png';
 import './App.css';
 
 function App() {
