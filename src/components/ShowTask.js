@@ -1,7 +1,15 @@
 import React from 'react';
 
-export const ShowTask = ({tasklist, setTasklist}) => {
-    
+export const ShowTask = ({tasklist, setTasklist, task, setTask}) => { // states are passed as props
+    const handleEdit = (id) => {
+        const selectedTask = tasklist.find(todo => todo.id === id); // find the task to be edited
+        setTask(selectedTask);
+    }
+
+    const handleDelete = (id) => {
+        const updatedTaskList = tasklist.filter(todo => todo.id !== id); //find the task to be deleted
+        setTasklist(updatedTaskList);
+    }
   return (
     <section className="showTask">
         <div className="head">
@@ -12,14 +20,14 @@ export const ShowTask = ({tasklist, setTasklist}) => {
             <button className='clearAll' onClick={() => setTasklist([])}>Clear All</button>
         </div>
         <ul>
-            { tasklist.map((task) => (
-                <li key={task.id}>
+            { tasklist.map((todo) => ( // individual task is mapped to the list
+                <li key={todo.id}>
                     <p>
-                        <span className='name'>{task.name}</span>
-                        <span ClassName='time'>{task.time}</span>
+                        <span className='name'>{todo.name}</span>
+                        <span ClassName='time'>{todo.time}</span>
                     </p>
-                    <i className='bi bi-pencil-square'></i>
-                    <i className='bi bi-trash'></i>
+                    <i onClick={() => handleEdit(todo.id)}   className='bi bi-pencil-square'></i>
+                    <i onClick={() => handleDelete(todo.id)} className='bi bi-trash'></i>
                 </li>
             )) }
         </ul>
