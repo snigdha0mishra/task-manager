@@ -174,11 +174,18 @@ header .theme-switcher .activeTheme{
 .showTask li .name{
   font-size: 18px;
   padding-bottom: 5px;
+  display: inline-block;
+  max-width: 100%;
+  white-space: normal;
+  word-wrap: break-word;
+  word-break: break-word;
 }
 
 .showTask li .time{
   font-size: 12px;
   color: #737373;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .showTask i.bi-pencil-square{

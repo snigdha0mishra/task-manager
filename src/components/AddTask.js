@@ -25,7 +25,7 @@ export const AddTask = ({tasklist, setTasklist, task, setTask}) => {
     return (
         <section className="addTask">
             <form onSubmit={handleSubmit}> 
-                <input type="text" placeholder="Task name" name="task" value={task.name || ""} autoComplete='off' maxLength='25' onChange={e => setTask({...task, name:e.target.value})}/>
+                <input type="text" placeholder="Task name" name="task" value={task.name || ""} autoComplete='off' onChange={e => setTask({...task, name:e.target.value})}/>
                 <button type="submit">{task.id ? "Update" : "Add Task"}</button>
             </form>
         </section>
