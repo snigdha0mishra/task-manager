@@ -205,3 +205,43 @@ header .theme-switcher .activeTheme{
     width: 100%;
   }
 }
+
+.weekProgress {
+  padding: 20px 15px;
+  border-radius: 5px;
+  background-color: #FFFFFF;
+  margin: 20px auto;
+  justify-content: space-around;
+  display: flex;
+  box-shadow: var(--box-shadow);
+}
+
+.dayContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.dayName {
+  margin-bottom: 5px;
+  text-decoration: underline;
+  font-size: 18px;
+  font-weight: 600;
+
+}
+
+.dayCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border: 2px solid #da5f96;
+  border-radius: 50%;
+  position: relative;
+}
+
+.dayCircle .bi-check {
+  font-size: 35px;
+  color: #da5f96;
+}
